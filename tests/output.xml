@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.3 on win32)" generated="20230530 00:28:47.589" rpa="false" schemaversion="3">
+<suite id="s1" name="Cadastro" source="C:\QAx\projects\mark85-robot\tests\cadastro.robot">
+<test id="s1-t1" name="Deve cadastrar um novo usuário" line="7">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{user}</var>
+<arg>name=Juliana Souza</arg>
+<arg>email=juliana@hotmail.com</arg>
+<arg>password=pwd123</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230530 00:28:47.657" level="INFO">&amp;{user} = { name=Juliana Souza | email=juliana@hotmail.com | password=pwd123 }</msg>
+<status status="PASS" starttime="20230530 00:28:47.657" endtime="20230530 00:28:47.657"/>
+</kw>
+<kw name="Remove User By Email">
+<arg>${user}[email]</arg>
+<msg timestamp="20230530 00:28:47.658" level="FAIL">No keyword with name 'Remove User By Email' found.</msg>
+<status status="FAIL" starttime="20230530 00:28:47.658" endtime="20230530 00:28:47.658"/>
+</kw>
+<kw name="Start Session">
+<status status="NOT RUN" starttime="20230530 00:28:47.659" endtime="20230530 00:28:47.659"/>
+</kw>
+<kw name="Go to signup">
+<status status="NOT RUN" starttime="20230530 00:28:47.660" endtime="20230530 00:28:47.660"/>
+</kw>
+<kw name="Register user">
+<arg>${user}</arg>
+<status status="NOT RUN" starttime="20230530 00:28:47.661" endtime="20230530 00:28:47.661"/>
+</kw>
+<kw name="Notice Should be">
+<arg>Boas vindas ao Mark85, o seu gerenciador de tarefas.</arg>
+<status status="NOT RUN" starttime="20230530 00:28:47.662" endtime="20230530 00:28:47.662"/>
+</kw>
+<status status="FAIL" starttime="20230530 00:28:47.656" endtime="20230530 00:28:47.662">No keyword with name 'Remove User By Email' found.</status>
+</test>
+<test id="s1-t2" name="Usuário duplicado" line="21">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{user}</var>
+<arg>name=Jean Gray</arg>
+<arg>email=fenix@xmen.com</arg>
+<arg>password=pwd123</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230530 00:28:47.663" level="INFO">&amp;{user} = { name=Jean Gray | email=fenix@xmen.com | password=pwd123 }</msg>
+<status status="PASS" starttime="20230530 00:28:47.663" endtime="20230530 00:28:47.663"/>
+</kw>
+<kw name="Remove User By Email">
+<arg>${user}[email]</arg>
+<msg timestamp="20230530 00:28:47.664" level="FAIL">No keyword with name 'Remove User By Email' found.</msg>
+<status status="FAIL" starttime="20230530 00:28:47.664" endtime="20230530 00:28:47.664"/>
+</kw>
+<kw name="Start Session">
+<status status="NOT RUN" starttime="20230530 00:28:47.666" endtime="20230530 00:28:47.666"/>
+</kw>
+<kw name="Go to signup">
+<status status="NOT RUN" starttime="20230530 00:28:47.668" endtime="20230530 00:28:47.668"/>
+</kw>
+<kw name="Register user">
+<arg>${user}</arg>
+<status status="NOT RUN" starttime="20230530 00:28:47.669" endtime="20230530 00:28:47.669"/>
+</kw>
+<kw name="Register user">
+<arg>${user}</arg>
+<status status="NOT RUN" starttime="20230530 00:28:47.670" endtime="20230530 00:28:47.670"/>
+</kw>
+<kw name="Notice Should be">
+<arg>Oops! Já existe um cadastro com e-mail informado.</arg>
+<status status="NOT RUN" starttime="20230530 00:28:47.671" endtime="20230530 00:28:47.671"/>
+</kw>
+<tag>dup</tag>
+<status status="FAIL" starttime="20230530 00:28:47.663" endtime="20230530 00:28:47.671">No keyword with name 'Remove User By Email' found.</status>
+</test>
+<status status="FAIL" starttime="20230530 00:28:47.597" endtime="20230530 00:28:47.672"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">dup</stat>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="Cadastro">Cadastro</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230530 00:28:47.655" level="ERROR">Error in file 'C:\QAx\projects\mark85-robot\tests\cadastro.robot' on line 3: Resource file 'C:\QAx\projects\mark85-robot\tests\resources\base.robot' does not exist.</msg>
+</errors>
+</robot>
