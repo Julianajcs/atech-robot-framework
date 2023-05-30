@@ -33,8 +33,65 @@ Usuário duplicado
     Register user        ${user}
     Notice Should be    Oops! Já existe um cadastro com e-mail informado.
 
-#Nome deve ser obrigatório
-   
-#Email deve ser obrigatório
+Nome deve ser obrigatório
 
-#Senha deve ser obrigatória
+    [Tags]    semnome
+
+   &{user}      Create Dictionary    
+    ...    name=    
+    ...    email=juliana@hotmail.com    
+    ...    password=pwd123
+
+    Remove User By Email        ${user}[email]
+
+    Start Session
+    Go to signup
+    Register user        ${user}
+    Alert Should be    Informe seu nome completo
+Email deve ser obrigatório
+
+   [Tags]    sememail
+
+   &{user}      Create Dictionary    
+    ...    name=Juliana    
+    ...    email= 
+    ...    password=pwd123
+
+    Remove User By Email        ${user}[email]
+
+    Start Session
+    Go to signup
+    Register user        ${user}
+    Alert Should be    Informe seu e-email
+
+Senha deve ser obrigatória
+
+   [Tags]    semsenha
+
+   &{user}      Create Dictionary    
+    ...    name=Juliana    
+    ...    email=juliana@hotmail.com 
+    ...    password=
+
+    Remove User By Email        ${user}[email]
+
+    Start Session
+    Go to signup
+    Register user        ${user}
+    Alert Should be    Informe uma senha com pelo menos 6 digitos
+
+Email deve ser valido
+
+   [Tags]    invalidemail
+
+   &{user}      Create Dictionary    
+    ...    name=Juliana    
+    ...    email=null    
+    ...    password=pwd123
+
+    Remove User By Email        ${user}[email]
+
+    Start Session
+    Go to signup
+    Register user        ${user}
+    Alert Should be    Digite um e-mail válido

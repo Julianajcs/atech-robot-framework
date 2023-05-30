@@ -25,3 +25,11 @@ Notice Should be
     
     Wait For Elements State    ${notice}    visible      5
     Get Text                   ${notice}    equal        ${message}
+
+Alert Should be
+    [Arguments]    ${message}
+    
+    ${alert}    Set Variable    css=.alert-error 
+
+    Wait For Elements State    ${alert}    visible      5
+    Get Text                   ${alert}    equal        ${message}    
